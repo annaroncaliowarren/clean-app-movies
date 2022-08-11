@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'src/presentation/ui/splash/splash_page.dart';
 
 void main() {
-  runApp(const AppWidget());
+  runApp(
+    const ProviderScope(
+      child: AppWidget(),
+    ),
+  );
 }
 
 class AppWidget extends StatelessWidget {
@@ -15,7 +22,11 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         useMaterial3: true,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.purple.shade200,
+        ),
       ),
+      home: const SplashPage(),
     );
   }
 }
