@@ -98,7 +98,7 @@ class ColumnTrendingMovies extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 31),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -106,7 +106,7 @@ class ColumnTrendingMovies extends StatelessWidget {
               movie.title,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
             Text(
