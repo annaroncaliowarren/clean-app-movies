@@ -30,7 +30,13 @@ class _SplashPageState extends State<SplashPage> {
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: ColoredBox(color: Colors.purple.shade200),
+        child: ColoredBox(
+          color: const Color.fromARGB(255, 24, 66, 100),
+          child: Image.network(
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tmdb.new.logo.svg/512px-Tmdb.new.logo.svg.png',
+            scale: 3,
+          ),
+        ),
       ),
     );
   }

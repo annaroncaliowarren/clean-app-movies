@@ -9,11 +9,23 @@ import 'movies_notifier.dart';
 
 final dioProvider = Provider((ref) => Dio());
 
-final moviesDatasourceProvider = Provider((ref) => GetAllTrendingMoviesRemoteDatasourceImp(ref.watch(dioProvider)));
+final moviesDatasourceProvider = Provider(
+  (ref) {
+    return GetAllTrendingMoviesRemoteDatasourceImp(ref.watch(dioProvider));
+  },
+);
 
-final moviesRepositoryProvider = Provider((ref) => GetAllTrendingMoviesRepositoryImp(ref.watch(moviesDatasourceProvider)));
+final moviesRepositoryProvider = Provider(
+  (ref) {
+    return GetAllTrendingMoviesRepositoryImp(ref.watch(moviesDatasourceProvider));
+  },
+);
 
-final moviesUseCaseProvider = Provider((ref) => GetAllTrendingMoviesUsecaseImp(ref.watch(moviesRepositoryProvider)));
+final moviesUseCaseProvider = Provider(
+  (ref) {
+    return GetAllTrendingMoviesUsecaseImp(ref.watch(moviesRepositoryProvider));
+  },
+);
 
 final moviesNotifierProvider = StateNotifierProvider<MoviesNotifier, List<MovieEntity>>(
   (ref) {
